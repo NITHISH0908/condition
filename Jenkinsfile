@@ -1,18 +1,13 @@
 pipeline{
     agent any
+    parameters{
+        string(name: 'PERSON', defaultValue: 'nithish', description: 'Enter your name')
+    }
     stages{
-        stage('Build'){
+        stage('ParametersExample'){
             steps{
-           echo "building the application"
+                 echo "welcome $(params.PERSON)"
             }
         }
-stage('DEPLOTTOPROD'){
-    when{
-        expression {BRANCH_NAME==~ /(production|staging)/}
-    }
-    steps{
-        echo "deplying to Prod"
-    }
-}
     }
 }
