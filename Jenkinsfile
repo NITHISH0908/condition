@@ -5,7 +5,7 @@ pipeline{
         string(name: 'CHANGE_TICKET', defaultValue: 'CH12345', description: 'Enter the Change ticket Number')
         booleanParam(name: 'Is SRE Approved?', defaultValue: true, description: 'Is Approval taken')
         choice(choices:'Regular\nHotfix', description: 'what release is this', name: 'RELEASE')
-        password(name:'myPassword', description:'Enter the password', defaultValue:Nani)
+        password(name:'myPassword', description:'Enter the password', defaultValue:'Nani')
         credentials(name : 'mycreds', description: 'MyDockercreds', required: true)
     }
         stages{
