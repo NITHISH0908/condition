@@ -3,12 +3,12 @@
 pipeline{
     agent any
     environment{
-        DEPLY_TO = "production"
+        DEPLOY_TO = "production"
     }
     stages{
         stage('WhenStage'){
             when{
-               environment name : 'DEPLY_TO', value: 'production'
+               environment name : 'DEPLOY_TO', value: 'production'
             }
             steps{
                 echo "Deploying to when stage"
