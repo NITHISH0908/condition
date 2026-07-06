@@ -8,7 +8,7 @@ pipeline{
         }
 stage('DEPLOTTOPROD'){
     when{
-        expression {BRANCH_NAME==~ /{production|staging}/}
+        expression {BRANCH_NAME==~ /(production|staging)/}
     }
     steps{
         echo "deplying to Prod"
